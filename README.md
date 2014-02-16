@@ -8,7 +8,7 @@
 ## How to use ##
 ```
 irb
->>require 'nmatrix-gemv'
-=>true
+>require 'nmatrix-gemv'
+=> true
 ```
 
