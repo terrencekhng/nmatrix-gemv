@@ -86,14 +86,14 @@ end
 if RUBY_VERSION < '1.9'
   raise(NotImplementedError, "Sorry, you need at least Ruby 1.9!")
 else
-  $INSTALLFILES = [['nmatrix-gemv.h', '$(archdir)'], ['nmatrix-gemv.hpp', '$(archdir)'], ['nmatrix-gemv_config.h', '$(archdir)']]
+  $INSTALLFILES = [['nmatrix_gemv.h', '$(archdir)'], ['nmatrix_gemv.hpp', '$(archdir)'], ['nmatrix_gemv_config.h', '$(archdir)']]
   if /cygwin|mingw/ =~ RUBY_PLATFORM
-    $INSTALLFILES << ['libnmatrix.a', '$(archdir)']
+    $INSTALLFILES << ['libnmatrix_gemv.a', '$(archdir)']
   end
 end
 
 if /cygwin|mingw/ =~ RUBY_PLATFORM
-  CONFIG["DLDFLAGS"] << " --output-lib libnmatrix.a"
+  CONFIG["DLDFLAGS"] << " --output-lib libnmatrix_gemv.a"
 end
 
 $DEBUG = true
@@ -102,7 +102,7 @@ $CXXFLAGS = ["-Wall -Werror=return-type",$CXXFLAGS].join(" ")
 $CPPFLAGS = ["-Wall -Werror=return-type",$CPPFLAGS].join(" ")
 
 # When adding objects here, make sure their directories are included in CLEANOBJS down at the bottom of extconf.rb.
-basenames = %w{nmatrix-gemv ruby_constants data/data util/io math util/sl_list storage/common storage/storage storage/dense/dense storage/yale/yale storage/list/list}
+basenames = %w{nmatrix_gemv ruby_constants data/data util/io math util/sl_list storage/common storage/storage storage/dense/dense storage/yale/yale storage/list/list}
 $objs = basenames.map { |b| "#{b}.o"   }
 $srcs = basenames.map { |b| "#{b}.cpp" }
 
@@ -235,8 +235,8 @@ CONFIG['warnflags'].gsub!('-Wshorten-64-to-32', '') # doesn't work except in Mac
 CONFIG['warnflags'].gsub!('-Wdeclaration-after-statement', '')
 CONFIG['warnflags'].gsub!('-Wimplicit-function-declaration', '')
 
-create_conf_h("nmatrix-gemv_config.h")
-create_makefile("nmatrix-gemv")
+create_conf_h("nmatrix_gemv_config.h")
+create_makefile("nmatrix_gemv")
 
 Dir.mkdir("data") unless Dir.exists?("data")
 Dir.mkdir("util") unless Dir.exists?("util")

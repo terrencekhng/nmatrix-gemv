@@ -32,7 +32,7 @@
  * Project Includes
  */
 
-#include "nmatrix-gemv.h"
+#include "nmatrix_gemv.h"
 
 #include "data/data.h"
 #include "storage/storage.h"

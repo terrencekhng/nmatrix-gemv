@@ -58,7 +58,7 @@
 
 #include "../common.h"
 
-#include "../../nmatrix-gemv.h"
+#include "../../nmatrix_gemv.h"
 #include "../../data/meta.h"
 
 #include "iterators/base.h"

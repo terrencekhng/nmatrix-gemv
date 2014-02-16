@@ -147,7 +147,7 @@
 //#include "math/math.h"
 #include "storage/dense/dense.h"
 
-#include "nmatrix-gemv.h"
+#include "nmatrix_gemv.h"
 #include "ruby_constants.h"
 
 /*

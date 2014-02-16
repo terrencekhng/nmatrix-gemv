@@ -52,7 +52,7 @@ extern "C" {
 /*
  * Project Includes
  */
-#include "nmatrix_config.h"
+#include "nmatrix_gemv_config.h"
 
 #include "types.h"
 #include "data/data.h"
@@ -62,7 +62,7 @@ extern "C" {
 #include "storage/list/list.h"
 #include "storage/yale/yale.h"
 
-#include "nmatrix-gemv.h"
+#include "nmatrix_gemv.h"
 
 #include "ruby_constants.h"
 

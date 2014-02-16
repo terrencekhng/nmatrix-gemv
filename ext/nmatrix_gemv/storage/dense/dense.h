@@ -45,7 +45,7 @@
 
 #include "../common.h"
 
-#include "nmatrix-gemv.h"
+#include "nmatrix_gemv.h"
 
 /*
  * Macros

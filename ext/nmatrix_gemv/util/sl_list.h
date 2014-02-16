@@ -44,7 +44,7 @@
 
 #include "data/data.h"
 
-#include "nmatrix-gemv.h"
+#include "nmatrix_gemv.h"
 
 namespace nm { namespace list {
 

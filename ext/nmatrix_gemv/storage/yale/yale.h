@@ -52,7 +52,7 @@
 #include "../../types.h"
 #include "../../data/data.h"
 #include "../common.h"
-#include "../../nmatrix-gemv.h"
+#include "../../nmatrix_gemv.h"
 
 extern "C" {
 

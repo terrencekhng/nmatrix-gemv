@@ -14,8 +14,8 @@ end
 require 'rake'
 require "rake/extensiontask"
 Rake::ExtensionTask.new do |ext|
-    ext.name = 'nmatrix-gemv'          
-    ext.ext_dir = 'ext/nmatrix-gemv' 
+    ext.name = 'nmatrix_gemv'          
+    ext.ext_dir = 'ext/nmatrix_gemv' 
     ext.lib_dir = 'lib/'             
     ext.source_pattern = "**/*.{c,cpp, h}" 
 end
@@ -70,7 +70,7 @@ GDB_OPTIONS = []
 RSpec::Core::RakeTask.new(:spec)
 
 task :console do |task|
-  cmd = [ 'irb', "-r './lib/nmatrix-gemv.rb'" ]
+  cmd = [ 'irb', "-r './lib/nmatrix_gemv.rb'" ]
   run *cmd
 end
 
@@ -91,7 +91,7 @@ end
 =end
 
 namespace :console do
-  CONSOLE_CMD = ['irb', "-r './lib/nmatrix-gemv.rb'"]
+  CONSOLE_CMD = ['irb', "-r './lib/nmatrix_gemv.rb'"]
   desc "Run console under GDB."
   task :gdb => [ :compile ] do |task|
           cmd = [ 'gdb' ] + GDB_OPTIONS
