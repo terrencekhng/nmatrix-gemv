@@ -26,12 +26,12 @@
 #
 
 # For some reason nmatrix.so ends up in a different place during gem build.
-if File.exist?("lib/nmatrix/nmatrix.so") #|| File.exist?("lib/nmatrix/nmatrix.bundle")
+if File.exist?("lib/nmatrix-gemv/nmatrix_gemv.so") #|| File.exist?("lib/nmatrix/nmatrix.bundle")
   # Development
-  require "nmatrix/nmatrix.so"
+  require "nmatrix-gemv/nmatrix_gemv.so"
 else
   # Gem
-  require "nmatrix.so"
+  require "nmatrix_gemv.so"
 end
 
 require 'nmatrix-gemv/nmatrix-gemv.rb'
