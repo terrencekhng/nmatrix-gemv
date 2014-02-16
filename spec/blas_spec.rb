@@ -28,6 +28,7 @@
 # Can we use require_relative here instead?
 require File.join(File.dirname(__FILE__), "spec_helper.rb")
 
+
 describe NMatrix::BLAS do
   #after :each do
   #  GC.start
