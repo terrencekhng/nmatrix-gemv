@@ -21,6 +21,7 @@ irb
 Suppose you have [NMatrix](https://github.com/SciRuby/nmatrix) installed.
 
 ```{.ruby}
+require 'nmatrix'
 require 'nmatrix-gemv'
 
 a = NMatrix.new([2,3], [1.0, 2.0, 3.0, 4.0, 5.0, 6.0], dtype: :float64)
