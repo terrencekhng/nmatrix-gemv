@@ -3,7 +3,7 @@ $:.unshift lib unless $:.include?(lib)
 
 Gem::Specification.new do |gem|
   gem.name = "nmatrix-gemv"
-  gem.version = '0.0.2'
+  gem.version = '0.0.3'
   gem.summary = "blas gemv function interface for NMatrix" 
   gem.description = "provide gemv function to NMatrix, just require 'nmatrix-gemv' in file to use." 
   gem.homepage = 'http://sciruby.com'

@@ -102,7 +102,7 @@ $CXXFLAGS = ["-Wall -Werror=return-type",$CXXFLAGS].join(" ")
 $CPPFLAGS = ["-Wall -Werror=return-type",$CPPFLAGS].join(" ")
 
 # When adding objects here, make sure their directories are included in CLEANOBJS down at the bottom of extconf.rb.
-basenames = %w{nmatrix_gemv ruby_constants data/data util/io math util/sl_list storage/common storage/storage storage/dense/dense storage/yale/yale storage/list/list}
+basenames = %w{nmatrix_gemv ruby_constants data/data math }
 $objs = basenames.map { |b| "#{b}.o"   }
 $srcs = basenames.map { |b| "#{b}.cpp" }
 
@@ -239,16 +239,16 @@ create_conf_h("nmatrix_gemv_config.h")
 create_makefile("nmatrix_gemv")
 
 Dir.mkdir("data") unless Dir.exists?("data")
-Dir.mkdir("util") unless Dir.exists?("util")
-Dir.mkdir("storage") unless Dir.exists?("storage")
-Dir.chdir("storage") do
-  Dir.mkdir("yale")  unless Dir.exists?("yale")
-  Dir.mkdir("list")  unless Dir.exists?("list")
-  Dir.mkdir("dense") unless Dir.exists?("dense")
-end
+#Dir.mkdir("util") unless Dir.exists?("util")
+#Dir.mkdir("storage") unless Dir.exists?("storage")
+#Dir.chdir("storage") do
+#  Dir.mkdir("yale")  unless Dir.exists?("yale")
+#  Dir.mkdir("list")  unless Dir.exists?("list")
+#  Dir.mkdir("dense") unless Dir.exists?("dense")
+#end
 
 # to clean up object files in subdirectories:
 open('Makefile', 'a') do |f|
-  clean_objs_paths = %w{data storage storage/dense storage/yale storage/list util}.map { |d| "#{d}/*.#{CONFIG["OBJEXT"]}" }
+  clean_objs_paths = %w{data}.map { |d| "#{d}/*.#{CONFIG["OBJEXT"]}" }
   f.write("CLEANOBJS := $(CLEANOBJS) #{clean_objs_paths.join(' ')}")
 end
