@@ -367,31 +367,6 @@ extern "C" {
 
   void Init_nmatrix_gemv();
 
-  // External API
-  /*
-  VALUE rb_nmatrix_dense_create(NM_DECL_ENUM(dtype_t, dtype), size_t* shape, size_t dim, void* elements, size_t length);
-  VALUE rb_nvector_dense_create(NM_DECL_ENUM(dtype_t, dtype), void* elements, size_t length);
-
-  NM_DECL_ENUM(dtype_t, nm_dtype_guess(VALUE));   // (This is a function)
-  NM_DECL_ENUM(dtype_t, nm_dtype_min(VALUE));
-
-  // Non-API functions needed by other cpp files.
-  NMATRIX* nm_create(NM_DECL_ENUM(stype_t, stype), STORAGE* storage);
-  NMATRIX* nm_cast_with_ctype_args(NMATRIX* self, NM_DECL_ENUM(stype_t, new_stype), NM_DECL_ENUM(dtype_t, new_dtype), void* init_ptr);
-  VALUE    nm_cast(VALUE self, VALUE new_stype_symbol, VALUE new_dtype_symbol, VALUE init);
-  void     nm_mark(NMATRIX* mat);
-  void     nm_delete(NMATRIX* mat);
-  void     nm_delete_ref(NMATRIX* mat);
-  void     nm_register_values(VALUE* vals, size_t n);
-  void     nm_unregister_values(VALUE* vals, size_t n);
-  void     nm_register_value(VALUE& val);
-  void     nm_unregister_value(VALUE& val);
-  void     nm_register_storage(nm::stype_t stype, const STORAGE* storage);
-  void     nm_unregister_storage(nm::stype_t stype, const STORAGE* storage);
-  void     nm_register_nmatrix(NMATRIX* nmatrix);
-  void     nm_unregister_nmatrix(NMATRIX* nmatrix);
-  void	   nm_completely_unregister_value(VALUE& val);
-  */
 #ifdef __cplusplus
 }
 #endif
